@@ -1,0 +1,18 @@
+<h1 class="animated fadeIn">
+  Buscando: <small>{{ term }}</small>
+</h1>
+<hr />
+
+<div
+  *ngIf="heroes.length > 0"
+  class="d-flex gap-2 flex-wrap justify-content-center"
+>
+  <app-heroe-card
+    [heroe]="heroe"
+    [i]="heroe.idx"
+    *ngFor="let heroe of heroes; let i = index"
+  ></app-heroe-card>
+  <div *ngIf="heroes.length === 0" class="alert alert-danger">
+    No se encontraron resultados para {{ term }}
+  </div>
+</div>
